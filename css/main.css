@@ -29,7 +29,9 @@ p {
 #mail-main,
 #footer,
 #nosotros,
-#team {
+#team,
+#set-servicios,
+#tecnologias-servicios {
   padding: 3em 0;
 }
 #header-main,

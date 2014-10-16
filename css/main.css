@@ -27,10 +27,13 @@ p {
 #valores-main,
 #recomiendan-main,
 #mail-main,
-#footer {
+#footer,
+#nosotros,
+#team {
   padding: 3em 0;
 }
-#header-main {
+#header-main,
+#header-other {
   padding: 2em 0;
 }
 .margen-derecho-uno {
@@ -53,6 +56,9 @@ p {
 }
 .relleno-abajo-uno {
   padding-bottom: 1em;
+}
+.relleno-uno {
+  padding: 1em;
 }
 .borde-uno {
   border-bottom: 4px solid #2ecc71;
@@ -79,6 +85,12 @@ p {
 #header-main,
 #valores-main {
   background: url("../img/header.jpg") center fixed;
+}
+#team-nosotros {
+  background: url("../img/team.jpg") center fixed;
+}
+#team {
+  background-color: rgba(253,255,254,0.8);
 }
 .color-text-white {
   color: #fff;
@@ -118,6 +130,9 @@ p {
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav>li>a {
   color: #95a5a6 !important;
+}
+.navbar {
+  margin-bottom: 0 !important;
 }
 .btn {
   border-radius: 3px !important;

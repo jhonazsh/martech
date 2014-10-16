@@ -26,7 +26,8 @@ p {
 #servicios-main,
 #valores-main,
 #recomiendan-main,
-#mail-main {
+#mail-main,
+#footer {
   padding: 3em 0;
 }
 #header-main {
@@ -65,6 +66,15 @@ p {
 .borde-cuatro {
   border-bottom: 4px solid #e74c3c;
 }
+.borde-derecho-dot {
+  border-right: 2px dotted #95a5a6;
+}
+.borde-arriba-dot {
+  border-top: 2px dotted #95a5a6;
+}
+.flota-derecha {
+  float: right;
+}
 /* Theme Rules */
 #header-main,
 #valores-main {
@@ -96,6 +106,9 @@ p {
 }
 .bg-color-concrete {
   background-color: #95a5a6;
+}
+.bg-color-oscuro {
+  background-color: #2c2c2c;
 }
 /* Bootstrap Customize Rules */
 .navbar-default {

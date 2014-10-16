@@ -60,111 +60,11 @@
       </div>
     </section>
 
-    <section id="set-servicios">
-      <div class="container">
-        <div class="row">
+    <section id="set-servicios" class="app">
+      <div class="container" >
+        <div class="row" id="lista-servicios">
 
-          <div class="col-md-4">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <p class="text-center">
-                  <img src="img/icon-design.png" width="60%">
-                </p>
-                <h4 class="text-center margen-arriba-uno">Diseño Gráfico</h4>
-                <p class="text-center margen-arriba-uno">
-                  Diseñamos su logotipo y los componentes gráficos que su marca necesita, para una comunicación clara, efectiva y de mayor alcance a sus clientes.
-                </p>
-                <p class="text-center margen-arriba-uno">
-                  <a href="" class="btn btn-warning">Ver Detalle</a>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <p class="text-center">
-                  <img src="img/icon-design.png" width="60%">
-                </p>
-                <h4 class="text-center margen-arriba-uno">Diseño Gráfico</h4>
-                <p class="text-center margen-arriba-uno">
-                  Diseñamos su logotipo y los componentes gráficos que su marca necesita, para una comunicación clara, efectiva y de mayor alcance a sus clientes.
-                </p>
-                <p class="text-center margen-arriba-uno">
-                  <a href="" class="btn btn-warning">Ver Detalle</a>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <p class="text-center">
-                  <img src="img/icon-design.png" width="60%">
-                </p>
-                <h4 class="text-center margen-arriba-uno">Diseño Gráfico</h4>
-                <p class="text-center margen-arriba-uno">
-                  Diseñamos su logotipo y los componentes gráficos que su marca necesita, para una comunicación clara, efectiva y de mayor alcance a sus clientes.
-                </p>
-                <p class="text-center margen-arriba-uno">
-                  <a href="" class="btn btn-warning">Ver Detalle</a>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <p class="text-center">
-                  <img src="img/icon-design.png" width="60%">
-                </p>
-                <h4 class="text-center margen-arriba-uno">Diseño Gráfico</h4>
-                <p class="text-center margen-arriba-uno">
-                  Diseñamos su logotipo y los componentes gráficos que su marca necesita, para una comunicación clara, efectiva y de mayor alcance a sus clientes.
-                </p>
-                <p class="text-center margen-arriba-uno">
-                  <a href="" class="btn btn-warning">Ver Detalle</a>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <p class="text-center">
-                  <img src="img/icon-design.png" width="60%">
-                </p>
-                <h4 class="text-center margen-arriba-uno">Diseño Gráfico</h4>
-                <p class="text-center margen-arriba-uno">
-                  Diseñamos su logotipo y los componentes gráficos que su marca necesita, para una comunicación clara, efectiva y de mayor alcance a sus clientes.
-                </p>
-                <p class="text-center margen-arriba-uno">
-                  <a href="" class="btn btn-warning">Ver Detalle</a>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <p class="text-center">
-                  <img src="img/icon-design.png" width="60%">
-                </p>
-                <h4 class="text-center margen-arriba-uno">Diseño Gráfico</h4>
-                <p class="text-center margen-arriba-uno">
-                  Diseñamos su logotipo y los componentes gráficos que su marca necesita, para una comunicación clara, efectiva y de mayor alcance a sus clientes.
-                </p>
-                <p class="text-center margen-arriba-uno">
-                  <a href="" class="btn btn-warning">Ver Detalle</a>
-                </p>
-              </div>
-            </div>
-          </div>
+          
 
         </div>
       </div>
@@ -314,9 +214,69 @@
       </div>
     </footer>
 
+  
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/underscore/underscore-min.js"></script>
+  <script src="bower_components/backbone/backbone.js"></script>
+
+  <script type="text/template" id="tpl-servicios">
+    <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p class="text-center">
+                  <img src="<%= imagen %>" width="60%">
+                </p>
+                <h4 class="text-center margen-arriba-uno"><%= nombre %></h4>
+                <p class="text-center margen-arriba-uno">
+                  <%= precontenido %>
+                </p>
+                <p class="text-center margen-arriba-uno">
+                  <button class="btn btn-warning" id="detalle">Ver Detalle</button>
+                </p>
+              </div>
+            </div>
+          </div>
+  </script>
+
+  <script type="text/template" id="tpl-detalle">
+    <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4">
+
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <p class="text-center">
+                      <img src="<%= imagen %>" width="80%">
+                    </p>
+                    <h4 class="text-center margen-arriba-uno font-size-20"><%= nombre %></h4>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-8" id="contenido-detalle">
+                
+              </div>
+            </div>
+          </div>
+  </script>
+
+  <script type="text/template" id="tpl-design">
+    design
+  </script>
+
+  <script type="text/template" id="tpl-website">
+    website
+  </script>
+
+  <script src="js/servidor-servicios.js"></script>
+  <script src="js/models.js"></script>
+  <script src="js/collection.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/routes.js"></script>
   </body>
 </html>
